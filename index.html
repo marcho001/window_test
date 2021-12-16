@@ -25,10 +25,10 @@
 
       const btn = document.querySelector("#btn");
       btn.addEventListener("click", () => {
-        source.postMessage(
-          { done: true, source },
-          "https://cdp.accunix.net/dashboard"
-        );
+        // source.postMessage(
+        //   { done: true, source },
+        //   "https://cdp.accunix.net/dashboard"
+        // );
         window.postMessage(
           { done: true, source: "window" },
           "https://cdp.accunix.net/dashboard"
