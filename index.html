@@ -8,13 +8,25 @@
   </head>
   <body>
     <h1>123</h1>
+    <button id="btn">login</button>
     <script>
       console.log("otherpag");
+      let source;
       window.addEventListener("message", (e) => {
         console.log("get message");
         console.log("e.data", e.data);
         console.log("e.source", e.source);
-        e.source.postMessage(true, "https://cdp.accunix.net/dashboard");
+        source = e.source;
+        e.source.postMessage(
+          { getMsg: true },
+          "https://cdp.accunix.net/dashboard"
+        );
+      });
+
+      const btn = document.querySelector("#btn");
+      btn.addEventListener("click", () => {
+        source.postMessage({ done: true }, "https://cdp.accunix.net/dashboard");
+        console.log("done");
       });
     </script>
   </body>
