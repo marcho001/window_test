@@ -7,12 +7,12 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>12</h1>
+    <h1>123</h1>
     <script>
       console.log("otherpag");
-      document.addEventListener("DOMContentLoaded", () => {
+      window.addEventListener("load", () => {
         console.log("load");
-        window.postMessage(true, "https://local.accu_cdp.accunix.net/home");
+        window.postMessage(true, "https://cdp.accunix.net/dashboard");
       });
     </script>
   </body>
