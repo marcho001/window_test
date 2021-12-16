@@ -9,7 +9,7 @@
   <body>
     <script>
       console.log("otherpag");
-      window.addEventListener("load", () => {
+      document.addEventListener("DOMContentLoaded", () => {
         console.log("load");
 
         window.postMessage(true, "*");
