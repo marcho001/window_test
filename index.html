@@ -10,9 +10,9 @@
     <h1>123</h1>
     <script>
       console.log("otherpag");
-      window.addEventListener("load", () => {
-        console.log("load");
-        window.postMessage(true, "https://cdp.accunix.net/dashboard");
+      window.addEventListener("message", (e) => {
+        console.log("get message");
+        e.source.postMessage(true, "https://cdp.accunix.net/dashboard");
       });
     </script>
   </body>
