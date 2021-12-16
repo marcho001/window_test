@@ -10,11 +10,9 @@
     <h1>12345</h1>
     <button id="btn">login</button>
     <script>
-      console.log("otherpag");
       let source;
       window.addEventListener("message", (e) => {
         if (e.data === "isAuth") {
-          console.log("e.source", e.source);
           source = e.source;
           e.source.postMessage(
             { getMsg: true },
@@ -25,14 +23,7 @@
 
       const btn = document.querySelector("#btn");
       btn.addEventListener("click", () => {
-        source.postMessage(
-          { done: true, source },
-          "https://cdp.accunix.net/dashboard"
-        );
-        // window.postMessage(
-        //   { done: true, source: "window" },
-        //   "https://cdp.accunix.net/dashboard"
-        // );
+        source.postMessage({ done: true }, "https://cdp.accunix.net/dashboard");
         console.log("done");
       });
     </script>
