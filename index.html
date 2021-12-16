@@ -12,6 +12,8 @@
       console.log("otherpag");
       window.addEventListener("message", (e) => {
         console.log("get message");
+        console.log("e.data", e.data);
+        console.log("e.source", e.source);
         e.source.postMessage(true, "https://cdp.accunix.net/dashboard");
       });
     </script>
