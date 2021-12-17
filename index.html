@@ -29,6 +29,7 @@
       // 驗證完成用儲存的 source 發送訊息
       const btn = document.querySelector("#btn");
       btn.addEventListener("click", () => {
+        console.log("window", window.opener);
         window.opener.postMessage(
           { done: true },
           "https://cdp.accunix.net/dashboard"
