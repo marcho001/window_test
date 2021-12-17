@@ -7,7 +7,7 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>123456789123456789123test</h1>
+    <h1>1234</h1>
     <button id="btn">login</button>
     <script>
       // 登入視窗
@@ -27,8 +27,11 @@
 
       // 模擬驗證流程，點擊按鈕為驗證完成
       // 驗證完成用儲存的 source 發送訊息
+      console.log("this", this, this.opener);
+      console.log("window o", window.opener);
       const btn = document.querySelector("#btn");
       btn.addEventListener("click", () => {
+        console.log(this);
         console.log("window", window.opener);
         window.opener.postMessage(
           { done: true },
