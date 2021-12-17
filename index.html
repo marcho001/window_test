@@ -10,21 +10,29 @@
     <h1>123456789123456789123</h1>
     <button id="btn">login</button>
     <script>
-      let source;
-      window.addEventListener("message", (e) => {
-        if (e.data === "isAuth") {
-          source = e.source;
-          e.source.postMessage(
-            { getMsg: true },
-            "https://cdp.accunix.net/dashboard"
-          );
-        }
-      });
+      // 登入視窗
 
+      // let source; // 儲存 message event 來源
+
+      // window.addEventListener("message", (e) => {
+      //   // 確認為 CDP 的連線請求才將事件來源儲存到 source 變數，並發送訊息通知已儲存來源
+      //   if (e.data === "connect") {
+      //     source = e.source;
+      //     e.source.postMessage(
+      //       { isSaveSourceInfo: true },
+      //       "https://cdp.accunix.net/dashboard"
+      //     );
+      //   }
+      // });
+
+      // 模擬驗證流程，點擊按鈕為驗證完成
+      // 驗證完成用儲存的 source 發送訊息
       const btn = document.querySelector("#btn");
       btn.addEventListener("click", () => {
-        source.postMessage({ done: true }, "https://cdp.accunix.net/dashboard");
-        console.log("done");
+        window.opener.postMessage(
+          { done: true },
+          "https://cdp.accunix.net/dashboard"
+        );
       });
     </script>
   </body>
